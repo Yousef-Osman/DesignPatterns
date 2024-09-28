@@ -1,11 +1,11 @@
 ﻿namespace DesignPatterns.Creational.FactoryMethod;
-internal class FactoryClient
+internal class AbstractFactoryClient
 {
     public static void Test()
     {
         var serial = "333";
 
-        var bankFactory = new BankFactory();
+        var bankFactory = new BankFactory2();
         var bank = bankFactory.GetBank(serial);
 
         if (bank == null ) {
@@ -24,23 +24,16 @@ internal class FactoryClient
 
         Console.WriteLine("======================================================");
 
-        var serial2 = "444";
+        var serial2 = "77";
 
-        var bank2 = bankFactory.GetBank(serial2);
+        var card = bankFactory.GetCard(serial2);
 
-        if (bank2 == null)
+        if (card == null)
         {
-            Console.WriteLine("Invalid Bank Serial");
+            Console.WriteLine("Invalid Bank Card");
             return;
         }
 
-        bank2.Deposite(8000);
-        bank2.Deposite(200);
-        bank2.Deposite(3000);
-
-        bank2.Withdraw(7800);
-
-        Console.WriteLine($"Bank Name: {bank2.GetBankName()}");
-        Console.WriteLine($"Amount: {bank2.GetAmount()}");
+        Console.WriteLine($"Bank Name: {card.GetCardType()}");
     }
 }
