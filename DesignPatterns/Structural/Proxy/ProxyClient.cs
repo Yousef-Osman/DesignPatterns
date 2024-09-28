@@ -1,5 +1,5 @@
 ﻿namespace DesignPatterns.Structural.Proxy;
-public static class ProxyClient
+public class ProxyClient
 {
     public static void Test()
     {

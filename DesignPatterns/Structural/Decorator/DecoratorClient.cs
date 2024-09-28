@@ -1,5 +1,5 @@
 ﻿namespace DesignPatterns.Structural.Decorator;
-internal static class DecoratorClient
+internal class DecoratorClient
 {
     public static void Test()
     {

@@ -11,6 +11,8 @@ internal class EmployeeEmailDecorator : IEmployeeTask
     public List<string> Excute()
     {
         var result = _employeeTask.Excute();
+
+        //logic to send email
         result.Add("An email with sent to the employee.");
 
         return result;
